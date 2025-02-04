@@ -43,7 +43,8 @@ class CourseDAO {
         record.name,
         record.path,
         record.about,
-        record.price
+        record.price,
+        record.overview
       ));
     } catch (err) {
       console.error('Error fetching courses:', err);
@@ -73,7 +74,8 @@ class CourseDAO {
         record.name,
         record.path,
         record.about,
-        record.price
+        record.price,
+        record.overview
       ));
     } catch (err) {
       console.error('Error fetching student courses:', err);
@@ -104,7 +106,8 @@ class CourseDAO {
         record.name,
         record.path,
         record.about,
-        record.price
+        record.price,
+        record.overview
       ));
       
     } catch (err) {

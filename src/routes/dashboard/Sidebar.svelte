@@ -68,7 +68,6 @@
 			name: 'Authentication',
 			icon: LockSolid,
 			children: {
-				'Forgot password': '/forgot-password',
 				'Reset password': '/dashboard/reset-password'
 			}
 		},
@@ -86,13 +85,8 @@
 			icon: LayersSolid
 		},
 		{
-			label: 'Support',
-			href: 'https://github.com/themesberg/flowbite-svelte-admin-dashboard/issues',
-			icon: LifeSaverSolid
-		},
-		{
 			label: 'Log Out',
-			href: 'https://github.com/themesberg/flowbite-svelte-admin-dashboard/issues',
+			href: '/api/logout',
 			icon: LockSolid
 		}
 	];
