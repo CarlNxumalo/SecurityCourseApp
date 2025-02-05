@@ -5,6 +5,7 @@
 
   let show = false;
   let show1 = false;
+  let pattern = "0[0-9]{9}";
   export let form;
 </script>
 
@@ -28,7 +29,7 @@
                   </div>
                   <div>
                       <Label for="phone" class="mb-2">Phone number</Label>
-                      <Input name="phone" type="tel" id="phone" placeholder="0795733344" pattern={"[0-9]{2}[1-9][0-9]{7}"} required />
+                      <Input name="phone" type="tel" id="phone" placeholder="0795733344" {pattern} required />
                   </div>
               </div>
 
