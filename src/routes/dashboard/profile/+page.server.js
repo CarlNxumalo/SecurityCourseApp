@@ -30,9 +30,16 @@ export const actions = {
 
       // TODO: Save user to your database
       try {
-          const student = new Student(Number(cookies.get('id')), name, surname, email,'password', phone);
           const studentService = new StudentService();
-          await studentService.updateUserProfile(student);
+          const oldStudent = await studentService.getStudentbyID(Number(cookies.get('id')));
+          oldStudent?.setName(name)
+          oldStudent?.setSurname(surname)
+          oldStudent?.setEmail(email)
+          oldStudent?.setPhone(phone)
+          await studentService.updateUserProfile(oldStudent);
+          return {
+              success: "Profile updated successfully!"
+          }
       } catch (error) {
           console.log("Failed to update user")
           if(error.message.startsWith('Violation of UNIQUE KEY constraint')){

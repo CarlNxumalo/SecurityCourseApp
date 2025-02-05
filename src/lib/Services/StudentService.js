@@ -58,6 +58,7 @@ class StudentService{
         if (!(student instanceof Student)) {
             throw new Error('Parameter must be an instance of the Student class to register a student.');
         }
+        
         await this.studentDAO.updateStudent(student)
     }
 

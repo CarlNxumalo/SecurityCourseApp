@@ -3,6 +3,8 @@
     import { Button, Checkbox, Label, Input, A,  ButtonGroup, InputAddon, ToolbarButton } from "flowbite-svelte";
     export let form;
     export let data;
+    let pattern = "0[0-9]{9}";
+
 </script>
 
 <Register>
@@ -24,7 +26,7 @@
               </div>
               <div>
                 <Label for="phone" class="mb-2">Phone number</Label>
-                <Input name="phone"type="tel" id="phone" bind:value={data.student.phone} placeholder="0716367633" pattern={"[0-9]{2}[1-9][0-9]{7}"} required />
+                <Input name="phone"type="tel" id="phone" bind:value={data.student.phone} placeholder="0716367633" {pattern} required />
               </div>
             </div>
             <Button type="submit" class="w-full1 mb-6">update</Button>
@@ -33,6 +35,12 @@
                   <span>Error: {form.error}</span>
                 </div>
             {/if}
+            {#if form?.success}
+                <div class="mb-4 text-sm font-medium text-green-500 dark:text-gray-300">
+                  <span>{form?.success}</span>
+                </div>
+            {/if}
+
         </form>
     </div>
 </Register>
