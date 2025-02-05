@@ -59,20 +59,20 @@
       <Modal title="Invoice Details" bind:open={clickOutsideModal} outsideclose>
         <div class="p-6 space-y-4">
           <div class="grid grid-cols-2 gap-x-4">
-            <div class="font-medium text-gray-700">Invoice ID:</div>
-            <div class="text-gray-900">{selectedInvoice.invoiceID}</div>
+            <div class="font-medium text-gray-700 dark:text-gray-400">Invoice ID:</div>
+            <div class="text-gray-900 dark:text-gray-400">{selectedInvoice.invoiceID}</div>
   
-            <div class="font-medium text-gray-700">EFT Reference:</div>
-            <div class="text-gray-900">{selectedInvoice.referenceEFT}</div>
+            <div class="font-medium text-gray-700 dark:text-gray-400">EFT Reference:</div>
+            <div class="text-gray-900 dark:text-gray-400">{selectedInvoice.referenceEFT}</div>
   
-            <div class="font-medium text-gray-700">Status:</div>
-            <div class="text-gray-900">{selectedInvoice.status}</div>
+            <div class="font-medium text-gray-700 dark:text-gray-400">Status:</div>
+            <div class="text-gray-900 dark:text-gray-400">{selectedInvoice.status}</div>
   
-            <div class="font-medium text-gray-700">Amount:</div>
-            <div class="text-gray-900">${selectedInvoice.amount.toFixed(2)}</div>
+            <div class="font-medium text-gray-700 dark:text-gray-400">Amount:</div>
+            <div class="text-gray-900 dark:text-gray-400">${selectedInvoice.amount.toFixed(2)}</div>
   
-            <div class="font-medium text-gray-700">Timestamp:</div>
-            <div class="text-gray-900">{new Date(selectedInvoice.createdAt).toLocaleString()}</div>
+            <div class="font-medium text-gray-700 dark:text-gray-400">Timestamp:</div>
+            <div class="text-gray-900 dark:text-gray-400">{new Date(selectedInvoice.createdAt).toLocaleString()}</div>
           </div>
         
           <h3 class="mt-4 text-lg font-semibold">Invoice Items</h3>
