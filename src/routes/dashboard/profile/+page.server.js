@@ -35,7 +35,10 @@ export const actions = {
           await studentService.updateUserProfile(student);
       } catch (error) {
           console.log("Failed to update user")
-          return fail(400, {error: "Failed to register user"})
+          if(error.message.startsWith('Violation of UNIQUE KEY constraint')){
+            return fail(400, {error: 'Email Address already exists'})
+          }
+          return fail(400, {error: error.message})
       }
     }
   };

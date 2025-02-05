@@ -43,7 +43,7 @@ export const actions = {
         
       } catch (error) {
           console.log("Failed to create invoice: "+error)
-          return fail(400, {error: "Failed to create invoice"})
+          return fail(400, {error: error.message})
       }
     }
 };

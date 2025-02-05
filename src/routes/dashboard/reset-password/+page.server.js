@@ -24,7 +24,7 @@ export const actions = {
         } 
     catch (error) {
         console.log(error)
-        return fail(400, { error: "Failed to reset password try again later"});
+        return fail(400, { error: error.message});
     }
   }
 };

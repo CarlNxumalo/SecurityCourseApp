@@ -1,22 +1,11 @@
 import sql from 'mssql';
 import Course from '$lib/Entities/Course';
-
-const config = {
-  user: 'Carl',
-  password: 'Carlzozo23$$',
-  database: 'MayOne',
-  server: 'DESKTOP-C365JJK',
-  options: {
-    encrypt: true,
-    trustServerCertificate: true,
-  },
-  connectionTimeout: 30000,
-};
+import {CONFIG} from '$env/static/private';
 
 class CourseDAO {
   async connect() {
     try {
-      this.pool = await sql.connect(config);
+      this.pool = await sql.connect(CONFIG);
     } catch (err) {
       console.error('Database connection failed:', err);
       throw err;

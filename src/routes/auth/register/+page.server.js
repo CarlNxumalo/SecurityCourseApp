@@ -17,12 +17,15 @@ export const actions = {
     // ✅ Validate inputs (basic example)
     if (!name || !surname || !email || !phone || !password || !password2) {
         console.log("All fields are required")
-      return fail(400, { error: "All fields are required" });
+        return fail(400, { 
+            error: "All fields are required", 
+            fields: { name, surname, email, phone } // Exclude passwords for security reasons
+        });
     }
 
     if (password !== password2) {
         console.log("Passwords do not match")
-      return fail(400, { error: "Passwords do not match" });
+      return fail(400, { error: "Passwords do not match" , fields: { name, surname, email, phone }});
     }
 
     // TODO: Save user to your database
@@ -32,7 +35,13 @@ export const actions = {
         await studentService.register(student);
     } catch (error) {
         console.log("Failed to register user")
-        return fail(400, {error: "Failed to register user"})
+        if (error.message.startsWith("Violation of UNIQUE KEY constraint")) {
+            // Handle the error
+            return fail(400, {error: 'Email already exists in the database'})
+        }
+        return fail(400, {error: error.message, fields: { name, surname, email, phone }})
+      
+        
     }
 
     // ✅ Redirect on success

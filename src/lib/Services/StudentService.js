@@ -74,7 +74,10 @@ class StudentService{
         console.log(passwordNew + ' '+ passwordConfirm)
         if (passwordNew !== passwordConfirm) {
             console.log("Passwords do not match")
-            throw new Error( "Passwords do not match");
+            throw new Error( "New passwords do not match");
+        }
+        if(passwordNew ==passwordCurrent){
+            throw new Error("New password cannot be the same as Current password")
         }
 
         //confrim if its the currenct password

@@ -1,23 +1,13 @@
 import sql from 'mssql';
 import Invoice from '$lib/Entities/Invoice';
 import Course from '$lib/Entities/Course';
+import {CONFIG} from '$env/static/private';
 
-const config = {
-  user: 'Carl',
-  password: 'Carlzozo23$$',
-  database: 'MayOne',
-  server: 'DESKTOP-C365JJK',
-  options: {
-    encrypt: true,
-    trustServerCertificate: true,
-  },
-  connectionTimeout: 30000,
-};
 
 class InvoiceDAO {
   async connect() {
     try {
-      this.pool = await sql.connect(config);
+      this.pool = await sql.connect(CONFIG);
     } catch (err) {
       console.error('Database connection failed:', err);
       throw err;

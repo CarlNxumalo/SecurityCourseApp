@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Section, Register } from "flowbite-svelte-blocks";
     import { Button, Checkbox, Label, Input } from "flowbite-svelte";
+    export let form
 </script>
     
 <Register href="/">
@@ -19,10 +20,12 @@
         <span>Confirm new password</span>
         <Input type="password" name="passwordConfirm" placeholder="•••••" required />
       </Label>
-      <div class="flex items-start">
-        <Checkbox>I accept the <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="/"> Terms and Conditions</a></Checkbox>
-      </div>
       <Button type="submit" class="w-full1">Reset passwod</Button>
+      {#if form?.error}
+          <div class="mb-4 text-sm font-medium text-red-500 dark:text-gray-300">
+              <span>Error: {form.error}</span>
+          </div>
+      {/if}
     </form>
   </div>
 </Register>

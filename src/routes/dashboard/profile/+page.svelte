@@ -1,7 +1,8 @@
 <script>
      import { Section, Register } from "flowbite-svelte-blocks";
     import { Button, Checkbox, Label, Input, A,  ButtonGroup, InputAddon, ToolbarButton } from "flowbite-svelte";
-    let { data } = $props();
+    export let form;
+    export let data;
 </script>
 
 <Register>
@@ -27,7 +28,11 @@
               </div>
             </div>
             <Button type="submit" class="w-full1 mb-6">update</Button>
-
+            {#if form?.error}
+                <div class="mb-4 text-sm font-medium text-red-500 dark:text-gray-300">
+                  <span>Error: {form.error}</span>
+                </div>
+            {/if}
         </form>
     </div>
 </Register>

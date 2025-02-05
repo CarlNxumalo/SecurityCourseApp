@@ -5,6 +5,7 @@
 
   // Receive props
   export let data;
+  export let form;
   var courses = data.courses
 
   //load
@@ -79,6 +80,11 @@
           </Card>
       {/each}    
       <Button type="button" color="dark" class="w-full mt-6" on:click={() => (clickOutsideModal = true)}>Show Invoice</Button>
+      {#if form?.error}
+          <div class="mb-4 text-sm font-medium text-red-500 dark:text-gray-300">
+              <span>{form.error}</span>
+          </div>
+      {/if}
  </div>
 </Register>
 
