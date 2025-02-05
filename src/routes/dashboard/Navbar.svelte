@@ -18,24 +18,22 @@
 	export let list = false;
 </script>
 
-<Navbar {fluid} class="text-black" color="default" let:NavContainer>
+<Navbar {fluid}  color="default" let:NavContainer>
 	<NavHamburger
 		onClick={() => (drawerHidden = !drawerHidden)}
 		class="m-0 me-3 md:block lg:hidden"
 	/>
 	<NavBrand href="/" class={list ? 'w-40' : 'lg:w-60'}>
-		<!--
 		<img
-			src="/images/flowbite-svelte-icon-logo.svg"
+			src="/favicon.png"
 			class="me-2.5 h-6 sm:h-8"
 			alt="Flowbite Logo"
 		/>
-		-->
 		
 		<span
-			class="ml-px self-center whitespace-nowrap text-xl font-semibold dark:text-white sm:text-2xl"
+			class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
 		>
-			MayOne
+			Mayone Security
 		</span>
 	</NavBrand>
 	<div class="hidden lg:block lg:ps-3">

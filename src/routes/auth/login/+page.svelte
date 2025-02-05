@@ -21,9 +21,11 @@
                 <span>Your password</span>
                 <Input type="password" name="password" placeholder="•••••••" required />
             </Label>
+            <!--
             <div>
                 <a href="/auth/forgot-password" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Forgot password?</a>
             </div>
+            -->
             <Button type="submit" class="w-full1">Sign in</Button>
             {#if form?.error}
                   <div class="mb-4 text-sm font-medium text-red-500 dark:text-gray-300">

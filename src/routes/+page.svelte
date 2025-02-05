@@ -19,47 +19,15 @@ Search
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   import './app.pcss';
 
-  export let fluid = true;
-  export let drawerHidden = false;
-  export let list = true;
 </script>
 
-<Navbar {fluid} class="text-black" color="default" let:NavContainer>
-<NavHamburger
-  onClick={() => (drawerHidden = !drawerHidden)}
-  class="m-0 me-3 md:block lg:hidden"
-/>
-<NavBrand href="/" class={list ? 'w-40' : 'lg:w-60'}>
-  <span
-    class="ml-px self-center whitespace-nowrap text-xl font-semibold dark:text-white sm:text-2xl"
-  >
-    MayOne Security Training
-  </span>
-</NavBrand>
-<div class="hidden lg:flex flex-1 justify-end">
-  {#if list}
-    <NavUl class="ml-2" activeUrl="/" activeClass="text-primary-600 dark:text-primary-500">
-      <NavLi href="/">Home</NavLi>
-      <NavLi href="#top">Messages</NavLi>
-      <NavLi href="#top">Profile</NavLi>
-      <NavLi href="#top">Settings</NavLi>
-      <NavLi class="cursor-pointer">
-        Dropdown
-        <ChevronDownOutline  class="ms-0 inline" />
-      </NavLi>
-      <Dropdown class="z-20 w-44">
-        <DropdownItem href="#top">Item 1</DropdownItem>
-        <DropdownItem href="#top">Item 2</DropdownItem>
-        <DropdownItem href="#top">Item 3</DropdownItem>
-      </Dropdown>
-    </NavUl>
-  {/if}
-</div>
-<div class="ms-auto flex items-center text-gray-500 dark:text-gray-400 sm:order-2">
+<Navbar>
+  <NavBrand href="/">
+    <img src="/favicon.png" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Mayone Security</span>
+  </NavBrand>
   <DarkMode />
-</div>
 </Navbar>
-
 <Section name="ctawithimg">
   <Cta ctatype="image">
   <svelte:fragment slot="img">
@@ -69,54 +37,10 @@ Search
   <svelte:fragment slot="h2">Empowering Your Path to a Successful Security Career.</svelte:fragment>
   <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">We offer top-tier security training courses to equip you with essential skills for a rewarding career in security services. Join us and start building your future today.</p>
   <a href="auth/register" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-      Get started
+      Sign Up
       <ArrowRightOutline size="md" class="ml-2 -mr-1" />
   </a>
   </Cta>
-</Section>
-
-<Section name="testimonial">
-<TestimonialCard>
-  <svelte:fragment slot="header">
-    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Testimonials</h2>
-    <p class="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Hear what our successful students have to say about their experience.</p>
-  </svelte:fragment>
-</TestimonialCard>
-<div class="grid mb-8 lg:mb-12 lg:grid-cols-2">
-  <TestimonialCardItem>
-    <svelte:fragment slot="h3">"This training changed my life!"</svelte:fragment>
-    <p class="my-4">"Thanks to MayOne, I gained the skills needed to land a secure and well-paying job in the security field. The instructors were knowledgeable, and the content was practical and engaging."</p>
-    <svelte:fragment slot="caption">
-      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="karen profile" />
-      <div class="space-y-0.5 font-medium dark:text-white text-left">
-        <div>Joseph M., MayOne Graduate</div>
-      </div>
-    </svelte:fragment>
-  </TestimonialCardItem>
-  <TestimonialCardItem>
-    <svelte:fragment slot="h3">"I feel confident in my new role."</svelte:fragment>
-    <p class="my-4">"The practical hands-on training gave me the confidence I needed to excel at my new job. I highly recommend MayOne for anyone pursuing a career in security services."</p>
-    <svelte:fragment slot="caption">
-      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="robert profile" />
-      <div class="space-y-0.5 font-medium dark:text-white text-left">
-        <div>Roberta Casas</div>
-        <div class="text-sm font-light text-gray-500 dark:text-gray-400">Security Specialist</div>
-      </div>
-    </svelte:fragment>
-  </TestimonialCardItem>
-</div>
-</Section>
-
-<Section name="contentwithimg">
-<ContentWithImage>
-  <svelte:fragment slot="h2">Your Journey to Security Excellence</svelte:fragment>
-  <p class="mb-4">At MayOne, we are committed to providing comprehensive security training to ensure our students are fully prepared for the challenges of the job. Our courses blend theoretical knowledge with practical application for maximum impact.</p>
-  <p>We believe in empowering you with the tools and techniques necessary to thrive in the security industry.</p>
-  <svelte:fragment slot="image">
-    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
-  </svelte:fragment>
-</ContentWithImage>
 </Section>
 
 <Section name="pricing">
@@ -198,3 +122,48 @@ Search
     </PricingCard>
   </div>
 </Section>
+
+<Section name="testimonial">
+<TestimonialCard>
+  <svelte:fragment slot="header">
+    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Testimonials</h2>
+    <p class="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Hear what our successful students have to say about their experience.</p>
+  </svelte:fragment>
+</TestimonialCard>
+<div class="grid mb-8 lg:mb-12 lg:grid-cols-2">
+  <TestimonialCardItem>
+    <svelte:fragment slot="h3">"This training changed my life!"</svelte:fragment>
+    <p class="my-4">"Thanks to MayOne, I gained the skills needed to land a secure and well-paying job in the security field. The instructors were knowledgeable, and the content was practical and engaging."</p>
+    <svelte:fragment slot="caption">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="karen profile" />
+      <div class="space-y-0.5 font-medium dark:text-white text-left">
+        <div>Joseph M., MayOne Graduate</div>
+      </div>
+    </svelte:fragment>
+  </TestimonialCardItem>
+  <TestimonialCardItem>
+    <svelte:fragment slot="h3">"I feel confident in my new role."</svelte:fragment>
+    <p class="my-4">"The practical hands-on training gave me the confidence I needed to excel at my new job. I highly recommend MayOne for anyone pursuing a career in security services."</p>
+    <svelte:fragment slot="caption">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="robert profile" />
+      <div class="space-y-0.5 font-medium dark:text-white text-left">
+        <div>Roberta Casas</div>
+        <div class="text-sm font-light text-gray-500 dark:text-gray-400">Security Specialist</div>
+      </div>
+    </svelte:fragment>
+  </TestimonialCardItem>
+</div>
+</Section>
+
+<Section name="contentwithimg">
+<ContentWithImage>
+  <svelte:fragment slot="h2">Your Journey to Security Excellence</svelte:fragment>
+  <p class="mb-4">At MayOne, we are committed to providing comprehensive security training to ensure our students are fully prepared for the challenges of the job. Our courses blend theoretical knowledge with practical application for maximum impact.</p>
+  <p>We believe in empowering you with the tools and techniques necessary to thrive in the security industry.</p>
+  <svelte:fragment slot="image">
+    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
+    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
+  </svelte:fragment>
+</ContentWithImage>
+</Section>
+
