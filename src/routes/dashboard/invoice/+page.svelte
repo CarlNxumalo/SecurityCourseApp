@@ -69,7 +69,7 @@
             <div class="text-gray-900 dark:text-gray-400">{selectedInvoice.status}</div>
   
             <div class="font-medium text-gray-700 dark:text-gray-400">Amount:</div>
-            <div class="text-gray-900 dark:text-gray-400">${selectedInvoice.amount.toFixed(2)}</div>
+            <div class="text-gray-900 dark:text-gray-400">R{selectedInvoice.amount.toFixed(2)}</div>
   
             <div class="font-medium text-gray-700 dark:text-gray-400">Timestamp:</div>
             <div class="text-gray-900 dark:text-gray-400">{new Date(selectedInvoice.createdAt).toLocaleString()}</div>
@@ -80,14 +80,14 @@
             {#each selectedInvoice.invoiceItems as item}
               <li class="py-3 flex justify-between">
                 <span>{item.name}</span>
-                <span>${item.price.toFixed(2)}</span>
+                <span>R{item.price.toFixed(2)}</span>
               </li>
             {/each}
           </ul>
       
           <div class="mt-4 text-lg font-bold flex justify-between">
             <span>Total:</span>
-            <span>${selectedInvoice.amount.toFixed(2)}</span>
+            <span>R{selectedInvoice.amount.toFixed(2)}</span>
           </div>
         </div>
         

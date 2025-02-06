@@ -67,7 +67,7 @@
               <p class="mb-3 text-gray-600 dark:text-gray-400">{course.about}</p>
             
               <div class="flex justify-between items-center mt-4">
-                  <p class="text-lg font-semibold text-gray-800 dark:text-gray-300">Price: ${course.price.toFixed(2)}</p>
+                  <p class="text-lg font-semibold text-gray-800 dark:text-gray-300">Price: R{course.price.toFixed(2)}</p>
                   {#if !course.disabled && course.selected}
                     <Button color="green" type="button" on:click={() => selection(course.courseID)}>Enrolled</Button>
                   {:else if !course.disabled}
