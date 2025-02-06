@@ -79,7 +79,7 @@
               </div>
           </Card>
       {/each}    
-      <Button type="button" color="dark" class="w-full mt-6" on:click={() => (clickOutsideModal = true)}>Show Invoice</Button>
+      <Button type="button"  class="w-full mt-6" on:click={() => (clickOutsideModal = true)}>continue</Button>
       {#if form?.error}
           <div class="mb-4 text-sm font-medium text-red-500 dark:text-gray-300">
               <span>{form.error}</span>

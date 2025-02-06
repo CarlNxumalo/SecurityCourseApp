@@ -31,8 +31,8 @@ Search
 <Section name="ctawithimg">
   <Cta ctatype="image">
   <svelte:fragment slot="img">
-      <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard" />
-      <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard" />
+      <img class="w-full " src="carolina-de-la-torre-WSt3r70BpCg-unsplash.jpg" alt="dashboard" />
+      <!--<img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard" />-->
   </svelte:fragment>
   <svelte:fragment slot="h2">Empowering Your Path to a Successful Security Career.</svelte:fragment>
   <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">We offer top-tier security training courses to equip you with essential skills for a rewarding career in security services. Join us and start building your future today.</p>
@@ -161,9 +161,22 @@ Search
   <p class="mb-4">At MayOne, we are committed to providing comprehensive security training to ensure our students are fully prepared for the challenges of the job. Our courses blend theoretical knowledge with practical application for maximum impact.</p>
   <p>We believe in empowering you with the tools and techniques necessary to thrive in the security industry.</p>
   <svelte:fragment slot="image">
-    <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
+    <img class="w-full rounded-lg" src="obi-pixel9propics-XDBRGiRYE-I-unsplash.jpg" alt="office content 1" />
+    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="rayner-simpson-IdXShaU_UiA-unsplash.jpg" alt="office content 2" />
   </svelte:fragment>
 </ContentWithImage>
 </Section>
+
+
+<Footer footerType="socialmedia">
+  <div class="mx-auto max-w-screen-xl text-center">
+    <FooterLinkGroup ulClass="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
+      <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">About</FooterLink>
+      <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Address</FooterLink>
+      <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">email</FooterLink>
+      <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Phone</FooterLink>
+    </FooterLinkGroup>
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023-2025 <a href="https://flowbite.com/" class="hover:underline">Mayone™</a>. All Rights Reserved.</span>
+  </div>
+</Footer>
 
